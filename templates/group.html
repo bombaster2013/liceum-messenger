@@ -1,0 +1,29 @@
+{% extends "main_base.html" %}
+{% block content %}
+    <p class="name_surname">{{group_name}}</p><br>
+    <link rel="stylesheet" href="../static/css/group.css">
+    <img src="{{ img_src }}" alt="Изображение не найдено"> <p class="about">{{ about }}</p>
+    <p class='creation_date'>Подписчиков: {{ subscribers }}</p>
+    <form method="post" action="" novalidate class="friend-form">
+        {% if not is_sub %}
+            {{ form.subscribe_button(type='submit', class='edit_button btn btn-primary') }}
+            {% elif is_sub %}
+            {{ form.unsubscribe_button(type='submit', class='edit_button btn btn-primary') }}
+        {% endif %}
+    </form>
+    <form method="post" action="" novalidate>
+    {% if is_author %}
+    <div class="make-post"><br> <textarea class="post-text" placeholder="Напишите что-нибудь" name="post-text"></textarea> </div> {{ form.send_post(type='submit', class='send-post btn btn-primary') }}
+    {% else %}
+        <div class="not-owner"></div>
+    {% endif %}
+    </form>
+    <div class="posts-display">
+    {% for post in posts %}
+        <div class="post-content">{{ post.created_date }}<br><br>{{ post.content }}</div>
+    {% endfor %}
+    {% if not posts %}
+        <div class="posts-missing"> Данное сообщество не публиковало записей</div>
+    {% endif %}
+    </div>
+{% endblock %}

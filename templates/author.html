@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <link rel="stylesheet" href="../static/css/registration.css">
+<h1>Авторизация</h1>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    {% if err == "1" %}
+<div class="alert alert-danger">
+    Неверный логин или пароль
+</div>
+{% endif %}
+    <p>
+        {{ form.username.label }}<br>
+        {{ form.username(class="form-control") }}<br>
+        {% if username == "" %}
+    <div class="alert alert-danger" role="alert">
+        Введите логин
+    </div>
+    {% endif %}
+    </p>
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(class="form-control", type="password") }}<br>
+        {% if password == "" %}
+            <div class="alert alert-danger" role="alert">
+                Введите пароль
+            </div>
+        {% endif %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }} {{ form.reg(type="submit", class="btn btn-primary")}}</p>
+</form>
+{% endblock %}

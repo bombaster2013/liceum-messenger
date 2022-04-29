@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Регистрация</h1>
+    <link rel="stylesheet" href="../static/css/registration.css">
+    <form action="" method="post" novalidate enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {% if err == 'Логин уже занят' %}
+            <div class="alert alert-danger" role="alert">
+                Данный логин уже занят
+            </div>
+        {% endif %}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(class="form-control") }}<br>
+            {% if name == "" %}
+                <div class="alert alert-danger" role="alert">
+                    Введите имя
+                </div>
+            {% endif %}
+        <p>
+            {{ form.surname.label }}<br>
+            {{ form.surname(class="form-control") }}<br>
+            {% if surname == "" %}
+                <div class="alert alert-danger" role="alert">
+                    Введите фамилию
+                </div>
+            {% endif %}
+        <p>
+            {{ form.login.label }}<br>
+            {{ form.login(class="form-control") }}<br>
+            {% if login == "" %}
+                <div class="alert alert-danger" role="alert">
+                    Введите логин
+                </div>
+            {% endif %}
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(class="form-control", type="password") }}<br>
+            {% if password == "" %}
+                <div class="alert alert-danger" role="alert">
+                    Введите пароль
+                </div>
+            {% endif %}
+
+
+        <p>{{ form.add_image.label }}</p><br>
+        <p>{{ form.add_image(type="file")}}</p>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    </form>
+{% endblock %}

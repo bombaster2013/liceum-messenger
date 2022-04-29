@@ -1,0 +1,18 @@
+{% extends "main_base.html" %}
+{% block content %}
+    <link rel="stylesheet" href="../static/css/message.css">
+    <body>
+    <form method="post">
+        <div id="bottom"><input id="text" type="text" name="text" placeholder="Напишите сообщение">
+        <input type="submit" name="submit" value="Отправить сообщение"></div>
+        <div id="msg">{% for message in messages %}
+            {% if message.by == user_id and message.to == uid %}
+                <p class="right">{{message.content}}</p>
+            {% elif message.by == uid and message.to == user_id %}
+                <p class="left">{{message.content}}</p>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </form>
+    </body>
+{% endblock %}

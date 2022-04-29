@@ -1,0 +1,9 @@
+{% extends "main_base.html" %}
+{% block content %}
+    <link rel="stylesheet" href="../static/css/group-creation.css">
+    <form method="post" action="" class='form-inline' enctype="multipart/form-data">
+    <p>{{ form.create_group(type='submit', class='create-button btn btn-primary') }}<br></p>
+    <p>{{ form.group_name(type='text', placeholder='Напишите что-нибудь...', class='group-name')}} {{ form.group_name.label(class='group-name-label') }}</p>
+    <p>{{ form.group_description(type='text', placeholder='Напишите что-нибудь...', class='group-name')}} {{ form.group_description.label(class='group-name-label') }}</p><p>{{ form.group_avatar(type='file', class='group-name') }}</p>
+    </form>
+{% endblock %}

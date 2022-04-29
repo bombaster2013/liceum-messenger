@@ -1,0 +1,40 @@
+h2{
+    text-align: center;
+    padding-bottom:50px;
+    width:100%;
+    background-color:#e1f2f1;
+}
+
+.form-inline .btn-requests {
+    width:1000px;
+    margin-top:-10px;
+    text-align:center;
+}
+
+.form-inline{
+    background-color: #edf4f7;
+}
+
+.avatar-preview {
+    width:100px;
+    height:100px;
+}
+
+
+.friends-list{
+    border: 20px solid #e1f2f1;
+    background-color: #e1f2f1;
+    border-radius: 10px;
+    padding-bottom:45px;
+    width:1200px;
+    margin-bottom:40px;
+}
+
+.name{
+    text-align: center;
+    margin-left:320px;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:-30px;
+    margin-bottom: 60px;
+}

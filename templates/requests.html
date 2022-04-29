@@ -1,0 +1,17 @@
+{% extends "main_base.html" %}
+{% block content %}
+    <link rel="stylesheet" href="../static/css/request.css">
+    <h2>Запросы в друзья</h2>
+    {% for user in users %}
+        <div class="user-request">
+            <p class="name"><img src="../static/img/{{ user.image }}" class="avatar-preview"
+                                 alt="Изображение не найдено">
+                {{ user.name }} {{ user.surname }}</p>
+            <form method="post" action="" novalidate>
+                <p class='accept'><input type="submit" name="accept_button.{{ user.id }}" class="accept-button btn btn-primary" value="Принять заявку"></p>
+                <p class='view-profile'><input type="submit" name="view_profile.{{ user.id }}" class="view-button btn btn-primary" value="Открыть профиль"></p>
+                <p class="decline"><input type="submit" name="decline_button.{{ user.id }}" class="decline-button btn btn-primary" value="Отклонить заявку"></p>
+            </form>
+        </div>
+    {% endfor %}
+{% endblock %}

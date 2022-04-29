@@ -1,0 +1,30 @@
+#bottom{
+    position: fixed;
+    top: 670px;
+}
+#text{
+    width: 600px;
+    margin-left: 100px;
+}
+#msg{
+    position: relative;
+    bottom: 225px;
+    height: 400px;
+    width: 1500px;
+    overflow: auto;
+}
+.left{
+    background-color: grey;
+    border-radius: 25px;
+    width: 90px;
+    padding: 5px;
+    margin-left: 25px;
+}
+.right{
+    background-color: #99d9ea;
+    border-radius: 25px;
+    width: fit-content;
+    height: 35px;
+    padding: 5px;
+    margin-left: 725px;
+}

@@ -1,0 +1,33 @@
+.avatar-preview{
+    width:100px;
+    height:100px;
+    margin-right:10px;
+}
+
+
+.user-profile{
+    margin-top:-200px;
+    background-color:#e1f2f1;
+    border:10px solid #e1f2f1;
+    border-radius:5px;
+    vertical-align:middle;
+    margin-bottom: 250px;
+}
+
+.name-surname{
+    font-weight:bold;
+    font-size:36px;
+    color:#000000;
+}
+
+.public-profile{
+    align-items:center;
+    margin-top:-170px;
+    background-color:#e1f2f1;
+    border:10px solid #e1f2f1;
+    border-radius:5px;
+    vertical-align:middle;
+    margin-left:30px;
+    width:1100px;
+    margin-bottom: 200px;
+}

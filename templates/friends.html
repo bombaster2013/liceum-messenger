@@ -1,0 +1,22 @@
+{% extends "main_base.html" %}
+{% block content %}
+    <link rel="stylesheet" href="../static/css/friends.css">
+    <form method="post" class="form-inline" action="" novalidate>
+        {{ form.requests_button(type="submit", class="btn btn-primary btn-requests") }}
+    </form><br><br>
+    {% for user in users %}
+        <form method="post" class="form-inline" action="" novalidate>
+            <p class="name"><img src="../static/img/{{ user.image }}" class="avatar-preview"
+                                 alt="Изображение не найдено">
+                {{ user.name }} {{ user.surname }}</p>
+            <form method="post" action="" novalidate>
+                <p class='write'><input type="submit" name="write_message.{{ user.id }}"
+                        class="write-button btn btn-primary" value="Написать сообщение"></p>
+                <p class='open-profile'><input type="submit" name="open_profile.{{ user.id }}"
+                        class="open-button btn btn-primary" value="Открыть профиль"></p>
+                <p class="remove-friends"><input type="submit" name="remove_button.{{ user.id }}"
+                                          class="remove-button btn btn-primary" value="Удалить из друзей"></p>
+            </form>
+        </form>
+    {% endfor %}
+{% endblock %}

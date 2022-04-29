@@ -1,0 +1,10 @@
+{% extends "main_base.html" %}
+{% block content %}
+    <h2 class="change-data-text">Изменить данные аккаунта</h2>
+    <form method="post" action="" novalidate class="second-form">
+    {{ form.name_field.label() }}<br>
+    {{ form.name_field(value=prev_name) }}<br><br>
+    {{ form.surname_field.label }}<br>
+    {{ form.surname_field(value=prev_surname) }}
+    </form>
+{% endblock %}

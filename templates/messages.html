@@ -1,0 +1,11 @@
+{% extends "main_base.html" %}
+{% block content %}
+    <link rel="stylesheet" href="../static/css/messages.css">
+    {% for friend in friends %}
+        <a href="../message/{{ friend.id }}">
+        <div class="user-profile">
+        <p class="name-surname"> <img class="avatar-preview" src="../static/img/{{ friend.image }}" alt="Изображение не найдено"> {{ friend.name }} {{ friend.surname }}</p>
+        </div>
+        </a>
+    {% endfor %}
+{% endblock %}

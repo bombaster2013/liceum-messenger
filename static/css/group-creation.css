@@ -1,0 +1,17 @@
+.form-inline{
+    background-color: #EDF4F7;
+}
+
+.group-name{
+    margin-top: 40px;
+    width:600px;
+}
+
+.group-name-label{
+    margin-top: 40px;
+    width:150px;
+}
+
+.create-button{
+    width:400px;
+}

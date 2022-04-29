@@ -1,0 +1,14 @@
+{% extends "main_base.html" %}
+{% block content %}
+    <form method="post" action="" class="form-inline">
+    {{ form.create_public(type='submit', class='btn btn-primary') }}
+    </form>
+    <link rel="stylesheet" href="../static/css/messages.css">
+    {% for group in groups %}
+        <a href="../groups/{{ group.id }}">
+        <div class="public-profile">
+        <p class="name-surname"> <img class="avatar-preview" src="../static/img/{{ group.image }}" alt="Изображение не найдено"> {{ group.name }}</p>
+        </div>
+        </a>
+    {% endfor %}
+{% endblock %}

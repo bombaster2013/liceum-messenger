@@ -1,0 +1,85 @@
+img {
+    width: 200px;
+    height: 200px;
+    margin-top: -30px;
+    margin-left: 40px;
+}
+
+.name_surname {
+    margin-top: -240px;
+    margin-left: 40px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.about {
+    margin-top: -200px;
+    margin-left: 270px;
+    color: #828282;
+    font-size: 22px;
+    margin-bottom: -50px;
+
+}
+
+.creation_date {
+    font-size: 10px;
+    float: right;
+    margin-right: -200px;
+    position: relative;
+    top:-210px;
+    right:100px;
+}
+
+.edit_button {
+    width: 200px;
+    margin: 50px 1000px 30px 38px;
+    float: left;
+}
+
+form.friend-form {
+    margin-top: 190px;
+}
+
+.rq-sent {
+    margin-left: 38px;
+    width: 200px;
+    text-align: center;
+}
+
+
+.post-text {
+    resize: none;
+    width: 400px;
+    height: 200px;
+    margin-left: 350px;
+    position:relative;
+    top:-230px;
+}
+
+.send-post{
+    position:relative;
+    top:-400px;
+    right:300px;
+}
+
+.posts-missing{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: -200px;
+    margin-left:30px;
+
+}
+
+.post-content{
+    background-color:#e1f2f1;
+    border: 10px solid #e1f2f1;
+    border-radius:5px;
+    margin-bottom:230px;
+    margin-top:-200px;
+    overflow-y:auto;
+}
+
+.not-owner{
+    margin-bottom: 250px;
+}

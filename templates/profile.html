@@ -1,0 +1,42 @@
+{% extends "main_base.html" %}
+{% block content %}
+    <p class="name_surname">{{ profile_name }} {{ profile_surname }}</p><br>
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <img src="{{ img_src }}" alt="Изображение не найдено"> <p class="about">{{ about }}</p>
+    <p class='creation_date'>Зарегистрирован в {{ create_date }}</p>
+    <form method="post" action="" novalidate class="friend-form">
+        {% if uid == pid %}
+            {{ form.edit_button(type="submit", class="edit_button btn btn-primary") }}<br>
+        {% elif friends %}
+            {{ form.write_message(type="submit", class="edit_button btn btn-primary") }} <br>
+        {% elif request_got %}
+            <p class="rq-got">Ответить на заявку</p>
+            {{ form.accept_rq(type="submit", class="edit_button btn btn-primary") }}<br>
+            {{ form.decline_rq(type="submit", class="edit_button btn btn-primary") }}<br>
+        {% elif request_sent %}
+            <p class="rq-sent"> Заявка отправлена </p> <br>
+            {{ form.cancel_request(type="submit", class="edit_button btn btn-primary") }} <br>
+        {% elif not request_sent %}
+            {{ form.add_friends(type="submit", class="edit_button btn btn-primary") }}<br>
+        {% else %}
+            <p></p>
+        {% endif %}
+    </form>
+    <form method="post" action="" novalidate>
+        {% if uid == pid %}
+            <div class="make-post"><br> <textarea class="post-text" placeholder="Напишите что-нибудь"
+                                                  name="post-text"></textarea></div>
+            {{ form.send_post(type='submit', class='send-post btn btn-primary') }}
+        {% else %}
+            <div class="not-owner"></div>
+        {% endif %}
+    </form>
+    <div class="posts-display">
+        {% for post in posts %}
+            <div class="post-content">{{ post.created_date }}<br><br>{{ post.content }}</div>
+        {% endfor %}
+        {% if not posts %}
+            <div class="posts-missing"> У этого пользователя ещё нет постов</div>
+        {% endif %}
+    </div>
+{% endblock %}
